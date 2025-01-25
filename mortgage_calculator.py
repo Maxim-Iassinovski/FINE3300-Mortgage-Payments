@@ -6,8 +6,6 @@ def calculate_pva(r, n):
 #Function calculates the mortgage payments for each payment frequency, given principal amount, rate and # of amortization years
 def mortgage_payments(principal, rate, amortization): 
 
-    mortgage_payments = ()
-
     #Convert interest rate to decimal form
     rate = rate / 100
 
@@ -42,8 +40,8 @@ def mortgage_payments(principal, rate, amortization):
     )
 
 #Prompt user for required information
-print("Please enter the prinicpal amount")
-prinicpalAmt = int(input())
+print("Please enter the principal amount")
+principalAmt = int(input())
 
 print("Please enter the quoted interest rate as a percentage")
 interestRate = float(input())
@@ -52,9 +50,10 @@ print("Please enter the amortization period in years")
 amortizationPeriod = int(input())
 print("")
 
-payments = mortgage_payments(prinicpalAmt, interestRate, amortizationPeriod)
+#Assign payments to the tuple of mortgage payments returned in the function
+payments = mortgage_payments(principalAmt, interestRate, amortizationPeriod)
 
-#Print payments
+#Print payments by indexing the tuple
 print("Monthly Payment: ", payments[0])
 print("Semi-monthly Payment: ", payments[1])
 print("Bi-weekly Payment: ", payments[2])
